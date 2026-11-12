@@ -7,5 +7,10 @@
     { "cargo": "Conselho fiscal", "nome": "Marcos Donizetti Lopes" },
     { "cargo": "Conselho disciplinar", "nome": "Arthur Grandini Rodella" }
   ],
-  "atletas": []
+  "atletas": [
+    { "nome": "Arthur Grandini Rodella", "funcao": "Atleta" },
+    { "nome": "Gustavo Henrique Gueno", "funcao": "Atleta" },
+    { "nome": "Dionísio Cordeiro", "funcao": "Atleta" },
+    { "nome": "Rodrigo de Souza Araujo Fernandes ", "funcao": "Atleta" }
+  ]
 }
