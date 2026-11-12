@@ -1,10 +1,10 @@
 {
   "membros": [
-    { "cargo": "Presidente", "Gustavo Henrique Gueno": "" },
-    { "cargo": "Vice-presidente", "Dionísio Cordeiro": "" },
+    { "cargo": "Presidente", "nome": "Gustavo Henrique Gueno" },
+    { "cargo": "Vice-presidente", "nome": "Dionísio Cordeiro" },
     { "cargo": "Diretor financeiro", "nome": "" },
-    { "cargo": "Diretor técnico", "Ronnie Koerich": "" },
-    { "cargo": "Conselho fiscal", "Henrique Carcereri": "" },
+    { "cargo": "Diretor técnico", "nome": "Ronnie Koerich" },
+    { "cargo": "Conselho fiscal", "nome": "Henrique Carcereri" },
     { "cargo": "Conselho disciplinar", "nome": "" }
   ],
   "atletas": []
