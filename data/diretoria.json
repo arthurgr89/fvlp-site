@@ -1,0 +1,11 @@
+{
+  "membros": [
+    { "cargo": "Presidente", "nome": "" },
+    { "cargo": "Vice-presidente", "nome": "" },
+    { "cargo": "Diretor financeiro", "nome": "" },
+    { "cargo": "Diretor técnico", "nome": "" },
+    { "cargo": "Conselho fiscal", "nome": "" },
+    { "cargo": "Conselho disciplinar", "nome": "" }
+  ],
+  "atletas": []
+}

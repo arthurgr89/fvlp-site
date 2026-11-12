@@ -1,0 +1,19 @@
+{
+  "anos": [
+    { "ano": 2025, "demonstracoes": [
+      { "titulo": "Balanço patrimonial", "arquivo": "" },
+      { "titulo": "Demonstração do resultado (DRE)", "arquivo": "" },
+      { "titulo": "Parecer do Conselho Fiscal", "arquivo": "" },
+      { "titulo": "Ata da Assembleia de aprovação", "arquivo": "" } ] },
+    { "ano": 2024, "demonstracoes": [
+      { "titulo": "Balanço patrimonial", "arquivo": "" },
+      { "titulo": "Demonstração do resultado (DRE)", "arquivo": "" },
+      { "titulo": "Parecer do Conselho Fiscal", "arquivo": "" },
+      { "titulo": "Ata da Assembleia de aprovação", "arquivo": "" } ] }
+  ],
+  "certidoes": [
+    { "titulo": "Certidão negativa federal (PGFN)", "validade": "", "arquivo": "" },
+    { "titulo": "Certificado de regularidade do FGTS", "validade": "", "arquivo": "" },
+    { "titulo": "Certidão negativa trabalhista (CNDT)", "validade": "", "arquivo": "" }
+  ]
+}

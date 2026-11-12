@@ -1,0 +1,11 @@
+{
+  "institucionais": [
+    { "titulo": "Estatuto social registrado em cartório", "arquivo": "" },
+    { "titulo": "Atas de eleição e posse", "arquivo": "" },
+    { "titulo": "Certidão de registro cadastral do Ministério do Esporte", "arquivo": "" },
+    { "titulo": "Regimento interno e código de ética", "arquivo": "" },
+    { "titulo": "Política de integridade e compliance", "arquivo": "" }
+  ],
+  "remuneracao": { "titulo": "Política e tabela de remuneração de dirigentes", "arquivo": "" },
+  "regulamentoCompras": { "titulo": "Regulamento de compras, aquisições e contratação de serviços", "arquivo": "" }
+}
