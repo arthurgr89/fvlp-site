@@ -41,8 +41,8 @@ home(){const rec=PR.slice(0,3);
 <div class="w" style="padding-top:2rem"><div class="grid">${[['/sobre/','Quem somos','Diretoria, conselhos e documentos'],['/transparencia/','Transparência','Balanços e certidões por ano'],['/projetos/','Projetos LIE','Valores, prazos e prestação de contas'],['/cotacoes/','Cotações','Compras abertas e propostas'],['/ouvidoria/','Denúncias','Canal com opção de anonimato']].map(t=>`<a class="card tile" href="${t[0]}"><h3>${t[1]}</h3><p>${t[2]}</p></a>`).join('')}</div>
 ${rec.length?`<h2>Projetos recentes</h2><div class="grid">${rec.map(pc).join('')}</div>`:''}</div>`},
 sobre(){const m=dir?.membros||[],at=dir?.atletas||[];
- app.innerHTML=`<div class="w"><div class="sobre-h"><img src="/assets/img/gestao-2526.jpg" alt="Selo da gestão 2025/26"><h1>Sobre a federação</h1></div>
-${S.sobre?`<p>${esc(S.sobre)}</p>`:empty('O texto institucional será publicado em breve.')}
+ app.innerHTML=`<div class="w"><h1>Sobre a federação</h1>
+<p>${esc(S.sobre||'Entidade que organiza, representa e desenvolve o parapente e a asa-delta no Paraná.')}</p>
 <h2>Diretoria e conselhos</h2><div class="grid">${m.map((x,i)=>`<div class="card" style="border-top:5px solid var(${i%2?'--b':'--g'})"><small>${esc(x.cargo)}</small><h3>${esc(x.nome||'A definir')}</h3></div>`).join('')}</div>
 <h2>Participação de atletas</h2>${at.length?`<div class="card">${at.map(a=>`<div class="row"><span>${esc(a.nome)}</span><small>${esc(a.funcao||'')}</small></div>`).join('')}</div>`:empty('Comissão de atletas a ser publicada (Art. 18-A).')}
 <h2>Documentos institucionais</h2><div class="card">${(DC.institucionais||[]).map(d=>doc(d.titulo,d.arquivo)).join('')}</div></div>`},
