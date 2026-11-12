@@ -6,5 +6,9 @@
   "telefone": "",
   "endereco": "",
   "sobre": "",
-  "formularios": { "contato": "", "proposta": "", "denuncia": "" }
+  "formularios": {
+  "contato": "https://script.google.com/macros/s/AKfycbxphfuIHQfVlphmOBoBB6qcM2q09co-Fx4AnoCGUZYQaVjVPBER7x1l9x7JSRs4yI5d/exec",
+  "proposta": "https://script.google.com/macros/s/AKfycbxphfuIHQfVlphmOBoBB6qcM2q09co-Fx4AnoCGUZYQaVjVPBER7x1l9x7JSRs4yI5d/exec",
+  "denuncia": "https://script.google.com/macros/s/AKfycbxphfuIHQfVlphmOBoBB6qcM2q09co-Fx4AnoCGUZYQaVjVPBER7x1l9x7JSRs4yI5d/exec"
+}
 }
