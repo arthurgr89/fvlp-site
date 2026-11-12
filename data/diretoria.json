@@ -1,11 +1,13 @@
 {
   "membros": [
-    { "cargo": "Presidente", "nome": "" },
-    { "cargo": "Vice-presidente", "nome": "" },
+    { "cargo": "Presidente", "Gustavo Henrique Gueno": "" },
+    { "cargo": "Vice-presidente", "Dionísio Cordeiro": "" },
     { "cargo": "Diretor financeiro", "nome": "" },
-    { "cargo": "Diretor técnico", "nome": "" },
-    { "cargo": "Conselho fiscal", "nome": "" },
+    { "cargo": "Diretor técnico", "Ronnie Koerich": "" },
+    { "cargo": "Conselho fiscal", "Henrique Carcereri": "" },
     { "cargo": "Conselho disciplinar", "nome": "" }
   ],
-  "atletas": []
+  "atletas": [
+    Arthur Grandini Rodella
+  ]
 }
