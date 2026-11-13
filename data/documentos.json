@@ -6,6 +6,6 @@
     { "titulo": "Regimento interno e código de ética", "arquivo": "" },
     { "titulo": "Política de integridade e compliance", "arquivo": "" }
   ],
-  "remuneracao": { "titulo": "Política e tabela de remuneração de dirigentes", "arquivo": "" },
+  "remuneracao": { "titulo": "Política e tabela de remuneração de dirigentes", "texto": "A FVLP não possui funcionários contratados em regime CLT e toda a diretoria trabalha de forma voluntária.", "arquivo": "" },
   "regulamentoCompras": { "titulo": "Regulamento de compras, aquisições e contratação de serviços", "arquivo": "" }
 }
