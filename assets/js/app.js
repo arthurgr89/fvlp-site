@@ -9,8 +9,7 @@ const applyFs=()=>{R.style.fontSize=z+'%';store.set('fs',z)};applyFs();
 if(store.get('th'))R.dataset.theme=store.get('th');
 window.fs=d=>{z=Math.min(140,Math.max(85,z+d*10));applyFs()};
 window.ct=()=>{const dk=matchMedia('(prefers-color-scheme:dark)').matches,cur=R.dataset.theme||(dk?'dark':'light');R.dataset.theme=cur=='dark'?'light':'dark';store.set('th',R.dataset.theme)};
-const st=document.createElement('style');st.textContent='[vw-access-button]{display:none!important}';document.head.append(st);
-window.vlibras=()=>{const b=document.querySelector('[vw-access-button]');if(b)b.click();else alert('O tradutor de Libras ainda está carregando. Tente novamente em instantes.')};
+window.vlibras=()=>{const v=window.VLibrasWidget;if(v&&v.toggle)v.toggle();else alert('O tradutor de Libras ainda está carregando. Tente novamente em instantes.')};
 const NAV=[['/','Início'],['/sobre/','Sobre'],['/transparencia/','Transparência'],['/projetos/','Projetos LIE'],['/cotacoes/','Cotações'],['/ouvidoria/','Ouvidoria']];
 const doc=(t,a,x='')=>`<div class="row"><span>${esc(t)}${x}</span>${a?`<a class="btn s" href="/documentos/${encodeURI(a)}" target="_blank" rel="noopener">Abrir PDF</a>`:'<span class="tag">Em breve</span>'}</div>`;
 const empty=m=>`<p class="empty">${m}</p>`;
@@ -26,9 +25,8 @@ $('#top').innerHTML=`<a class="skip" href="#app">Ir para o conteúdo</a>
 <div class="top"><div class="w"><button onclick="fs(1)" aria-label="Aumentar fonte">A+</button><button onclick="fs(-1)" aria-label="Diminuir fonte">A−</button><button onclick="ct()">Alto contraste</button><button onclick="vlibras()">Libras</button></div></div>
 <header class="h"><div class="w"><a class="brand" href="/" aria-label="FVLP – Federação de Voo Livre do Paraná, início"><img src="/assets/img/logo-fvlp.jpg" alt="FVLP – Federação de Voo Livre do Paraná"></a>
 <nav aria-label="Principal">${NAV.map(n=>`<a href="${n[0]}"${(n[0]=='/'?path=='/'||path=='/index.html':path.startsWith(n[0]))?' aria-current="page"':''}>${n[1]}</a>`).join('')}</nav></div></header>`;
-$('#foot').innerHTML=`<footer><div class="w"><b>${esc(S.nome||'Federação de Voo Livre do Paraná')} · Gestão 2025/26</b><br>${[S.cnpj&&'CNPJ '+esc(S.cnpj),S.email&&`<a href="mailto:${esc(S.email)}">${esc(S.email)}</a>`,S.telefone&&esc(S.telefone),S.endereco&&esc(S.endereco)].filter(Boolean).join(' · ')}${S.cnpj||S.email||S.telefone||S.endereco?'<br>':''}<a href="/ouvidoria/">Ouvidoria</a> · <a href="/privacidade/">Privacidade</a></div></footer>
-<div vw class="enabled"><div vw-access-button class="active"></div><div vw-plugin-wrapper><div class="vw-plugin-top-wrapper"></div></div></div>`;
-const vl=document.createElement('script');vl.src='https://vlibras.gov.br/app/vlibras-plugin.js';vl.onload=()=>{try{new window.VLibras.Widget('https://vlibras.gov.br/app')}catch{}};document.body.append(vl);
+$('#foot').innerHTML=`<footer><div class="w"><b>${esc(S.nome||'Federação de Voo Livre do Paraná')} · Gestão 2025/26</b><br>${[S.cnpj&&'CNPJ '+esc(S.cnpj),S.email&&`<a href="mailto:${esc(S.email)}">${esc(S.email)}</a>`,S.telefone&&esc(S.telefone),S.endereco&&esc(S.endereco)].filter(Boolean).join(' · ')}${S.cnpj||S.email||S.telefone||S.endereco?'<br>':''}<a href="/ouvidoria/">Ouvidoria</a> · <a href="/privacidade/">Privacidade</a></div></footer>`;
+const vl=document.createElement('script');vl.src='https://vlibras.gov.br/app/vlibras-plugin.js';vl.onload=()=>{try{new window.VLibras.Widget({rootPath:'https://vlibras.gov.br/app',showButton:false})}catch{}};document.body.append(vl);
 
 const app=$('#app');
 const pc=p=>{const pct=p.valorAprovado?Math.min(100,p.valorCaptado/p.valorAprovado*100):0;return `<a class="card tile" href="/projetos/?id=${encodeURIComponent(p.id)}"><span class="tag ${tg(p.status)}">${esc(p.status)}</span> <span class="tag">${esc(p.ano)}</span><h3 style="margin-top:.5rem">${esc(p.nome)}</h3><p>${brl(p.valorCaptado)} captados de ${brl(p.valorAprovado)}</p><div class="bar"><i style="width:${pct}%"></i></div></a>`};
