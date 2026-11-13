@@ -9,6 +9,8 @@ const applyFs=()=>{R.style.fontSize=z+'%';store.set('fs',z)};applyFs();
 if(store.get('th'))R.dataset.theme=store.get('th');
 window.fs=d=>{z=Math.min(140,Math.max(85,z+d*10));applyFs()};
 window.ct=()=>{const dk=matchMedia('(prefers-color-scheme:dark)').matches,cur=R.dataset.theme||(dk?'dark':'light');R.dataset.theme=cur=='dark'?'light':'dark';store.set('th',R.dataset.theme)};
+const st=document.createElement('style');st.textContent='[vw-access-button]{display:none!important}';document.head.append(st);
+window.vlibras=()=>{const b=document.querySelector('[vw-access-button]');if(b)b.click();else alert('O tradutor de Libras ainda está carregando. Tente novamente em instantes.')};
 const NAV=[['/','Início'],['/sobre/','Sobre'],['/transparencia/','Transparência'],['/projetos/','Projetos LIE'],['/cotacoes/','Cotações'],['/ouvidoria/','Ouvidoria']];
 const doc=(t,a,x='')=>`<div class="row"><span>${esc(t)}${x}</span>${a?`<a class="btn s" href="/documentos/${encodeURI(a)}" target="_blank" rel="noopener">Abrir PDF</a>`:'<span class="tag">Em breve</span>'}</div>`;
 const empty=m=>`<p class="empty">${m}</p>`;
@@ -21,7 +23,7 @@ const S=site||{},PR=proj||[],CO=cot||{abertas:[],encerradas:[]},DC=docs||{};
 const page=document.body.dataset.page,path=location.pathname;
 
 $('#top').innerHTML=`<a class="skip" href="#app">Ir para o conteúdo</a>
-<div class="top"><div class="w"><button onclick="fs(1)" aria-label="Aumentar fonte">A+</button><button onclick="fs(-1)" aria-label="Diminuir fonte">A−</button><button onclick="ct()">Alto contraste</button></div></div>
+<div class="top"><div class="w"><button onclick="fs(1)" aria-label="Aumentar fonte">A+</button><button onclick="fs(-1)" aria-label="Diminuir fonte">A−</button><button onclick="ct()">Alto contraste</button><button onclick="vlibras()">Libras</button></div></div>
 <header class="h"><div class="w"><a class="brand" href="/" aria-label="FVLP – Federação de Voo Livre do Paraná, início"><img src="/assets/img/logo-fvlp.jpg" alt="FVLP – Federação de Voo Livre do Paraná"></a>
 <nav aria-label="Principal">${NAV.map(n=>`<a href="${n[0]}"${(n[0]=='/'?path=='/'||path=='/index.html':path.startsWith(n[0]))?' aria-current="page"':''}>${n[1]}</a>`).join('')}</nav></div></header>`;
 $('#foot').innerHTML=`<footer><div class="w"><b>${esc(S.nome||'Federação de Voo Livre do Paraná')} · Gestão 2025/26</b><br>${[S.cnpj&&'CNPJ '+esc(S.cnpj),S.email&&`<a href="mailto:${esc(S.email)}">${esc(S.email)}</a>`,S.telefone&&esc(S.telefone),S.endereco&&esc(S.endereco)].filter(Boolean).join(' · ')}${S.cnpj||S.email||S.telefone||S.endereco?'<br>':''}<a href="/ouvidoria/">Ouvidoria</a> · <a href="/privacidade/">Privacidade</a></div></footer>
@@ -55,7 +57,7 @@ transparencia(){const anos=trans?.anos||[];let ano=anos[0]?.ano;
  app.innerHTML=`<div class="w"><h1>Portal da Transparência</h1><div class="f" role="group" aria-label="Exercício">${anos.map(x=>`<button aria-pressed="${x.ano==ano}" data-a="${x.ano}">${x.ano}</button>`).join('')}</div>
 <div class="grid"><div class="card"><h3>Demonstrações contábeis ${esc(ano||'')}</h3>${a?a.demonstracoes.map(d=>doc(d.titulo,d.arquivo)).join(''):empty('Nenhum exercício publicado ainda.')}</div>
 <div class="card"><h3>Certidões e regularidade</h3>${cs.map(c=>{const v=c.validade,vencida=v&&v<new Date().toISOString().slice(0,10);return doc(c.titulo,c.arquivo,v?` <span class="tag ${vencida?'bad':'ok'}">${vencida?'Vencida em':'Válida até'} ${dt(v)}</span>`:'')}).join('')}</div></div>
-${rm?`<div class="card" style="margin-top:1rem"><h3>Remuneração de dirigentes</h3>${doc(rm.titulo,rm.arquivo)}</div>`:''}</div>`;
+${rm?`<div class="card" style="margin-top:1rem"><h3>Remuneração de dirigentes</h3>${rm.texto?`<p>${esc(rm.texto)}</p>`:doc(rm.titulo,rm.arquivo)}</div>`:''}</div>`;
  $$('[data-a]').forEach(b=>b.onclick=()=>{ano=+b.dataset.a;draw()})};draw()},
 projetos(){const id=new URLSearchParams(location.search).get('id');
  if(id){const p=PR.find(x=>String(x.id)==id);
