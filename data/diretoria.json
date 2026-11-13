@@ -8,9 +8,6 @@
     { "cargo": "Conselho disciplinar", "nome": "Arthur Grandini Rodella" }
   ],
   "atletas": [
-    { "nome": "", "funcao": "" },
-    { "nome": "", "funcao": "" },
-    { "nome": "", "funcao": "" },
-    { "nome": "", "funcao": "" }
+    
   ]
 }
