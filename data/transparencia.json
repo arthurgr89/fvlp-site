@@ -12,8 +12,8 @@
       { "titulo": "Ata da Assembleia de aprovação", "arquivo": "" } ] }
   ],
   "certidoes": [
-    { "titulo": "Certidão negativa federal (PGFN)", "validade": "", "arquivo": "" },
-    { "titulo": "Certificado de regularidade do FGTS", "validade": "", "arquivo": "" },
-    { "titulo": "Certidão negativa trabalhista (CNDT)", "validade": "", "arquivo": "" }
+    { "titulo": "Certidão negativa federal (PGFN)", "validade": "", "arquivo": "/transparencia/certidoes/certidao-negativa-debitos-federais-26.pdf" },
+    { "titulo": "Certificado de regularidade do FGTS", "validade": "", "arquivo": "/transparencia/certidoes/certificado-Regularidade-fgts-26.pdf" },
+    { "titulo": "Certidão negativa trabalhista (CNDT)", "validade": "", "arquivo": "/transparencia/certidoes/certidao-negativa-trabalhista-26.pdf" }
   ]
 }
